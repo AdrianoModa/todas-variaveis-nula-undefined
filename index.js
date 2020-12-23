@@ -1,7 +1,11 @@
 // Import stylesheets
 import "./style.css";
 
-// Write Javascript code!
+/**
+  * Verifica se todas as variaveis informadas retornam `null` ou `undefined`.
+  * @param variables um spread que aloca as variaveis a serem testadas.
+  * @author `Adriano Moda`
+*/
 const isDivTrue = document.getElementById("exibeSeVerdadeiro");
 const isDivFalse = document.getElementById("exibeSeFalso")
 const a = null;
