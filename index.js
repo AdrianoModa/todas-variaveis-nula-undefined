@@ -7,16 +7,27 @@ import "./style.css";
   * @author `Adriano Moda`
 */
 const isDivTrue = document.getElementById("exibeSeVerdadeiro");
-const isDivFalse = document.getElementById("exibeSeFalso")
+const isDivFalse = document.getElementById("exibeSeFalso");
+const valueABC = document.getElementById("valueABC");
+const valueDEF = document.getElementById("valueDEF");
 const a = null;
 const b = undefined;
 const c = null;
-const d = 'Gandalf'
-const e = 'Bilbo'
-const f = 'Frodo'
+var arrayABC = [a,b,c];
+var txtABC = "";
+const d = 'Gandalf';
+const e = 'Bilbo';
+const f = 'Frodo';
+var arrayDEF = [d,e,f];
+var txtDEF = "";
 isDivTrue.innerHTML = isNullOrUndefinedWithArray(a, b, c);
 isDivFalse.innerHTML = isNullOrUndefinedWithArray(d, e, f);
 
+arrayABC.forEach(displayArrayValuesABC)
+document.getElementById("valor-abc").innerHTML = txtABC
+
+arrayDEF.forEach(displayArrayValuesDEF)
+document.getElementById("valor-def").innerHTML = txtDEF
 
 function isNullOrUndefinedWithArray(...variables) {
   const listObjects = [...variables];
@@ -24,3 +35,10 @@ function isNullOrUndefinedWithArray(...variables) {
   return isNullOrUndefined
 }
 
+function displayArrayValuesABC(value){
+  txtABC = txtABC + value + ", ";
+}
+
+function displayArrayValuesDEF(value){
+  txtDEF = txtDEF + value + ", ";
+}
