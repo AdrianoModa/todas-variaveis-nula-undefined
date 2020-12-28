@@ -12,13 +12,6 @@
 />
 
 <div class="container">
-  <p class="text-primary" id="valor-abc"></p>
-  <div id="exibeSeVerdadeiro"></div>
-  <p class="text-success" id="valor-def"></p>
-  <div id="exibeSeFalso"></div>
-</div>
-
-<div class="container">
   <nav class="navbar navbar-light bg-light">
     <span class="navbar-text">
       Se Todas as variáveis são ou não nulas/undefined
@@ -26,16 +19,15 @@
   </nav>
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">Teste com valores nulos</h5>
+      <h5 class="card-title">Valores:</h5>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroup-sizing-value-1"
-            >Valor 1</span
+          <span class="input-group-text" id="inputGroup-sizing-value-1">Valor 1</span
           >
         </div>
         <input
+          id="input-valor-1"
           type="text"
-          oninput="valor1($event.target.value)"
           class="form-control"
           aria-label="Sizing example input"
           aria-describedby="inputGroup-sizing-value-1"
@@ -44,11 +36,10 @@
 
       <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroup-sizing-value-2"
-            >Valor 2</span
-          >
+          <span class="input-group-text" id="inputGroup-sizing-value-2">Valor 2</span>
         </div>
         <input
+          id="input-valor-2"
           type="text"
           class="form-control"
           aria-label="Sizing example input"
@@ -58,11 +49,11 @@
 
       <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroup-sizing-value-3"
-            >Valor 3</span
+          <span class="input-group-text" id="inputGroup-sizing-value-3">Valor 3</span
           >
         </div>
         <input
+          id="input-valor-3"
           type="text"
           class="form-control"
           aria-label="Sizing example input"
@@ -72,6 +63,12 @@
     </div>
 
     <p id="resultado"></p>
+
+    <button id="btn-resultado" type="button" class="btn btn-primary btn-sm">
+      Verficar
+    </button>
+    <button id="btn-reset" type="button" class="btn btn-secondary btn-sm mt-2">
+      Limpar
+    </button>
   </div>
-  
 </div>
