@@ -34,17 +34,20 @@ buttonResult.onclick = function() {
   }
 
   return (resultadoDocument.innerHTML =
-    "São todas nulas? " + retornoResposta(isNullOrUndefinedWithArray(valor_1_target, valor_2_target, valor_3_target)));
+    "São todas nulas? " +
+    retornoResposta(
+      isNullOrUndefinedWithArray(valor_1_target, valor_2_target, valor_3_target)
+    ));
 };
 
 var buttonReset = document.getElementById("btn-reset");
 buttonReset.onclick = function() {
-  document.getElementById("input-valor-1").value = "";
-  document.getElementById("input-valor-2").value = "";
-  document.getElementById("input-valor-3").value = "";
+  for (let i = 1; i < 4; i++) {
+    document.getElementById("input-valor-" + i.toString()).value = "";
+  }
 };
 
-function retornoResposta(resposta){
-  if(resposta == true) return 'Sim'
-  if(resposta == false) return 'Não'
+function retornoResposta(resposta) {
+  if (resposta == true) return "Sim";
+  if (resposta == false) return "Não";
 }
