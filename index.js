@@ -9,6 +9,11 @@ import "./style.css";
 
 const resultadoDocument = document.getElementById("resultado");
 const buttonResult = document.getElementById("btn-resultado");
+const titleInput = document.getElementById("titulo-input");
+const title = document.getElementById("titulo");
+
+titleInput.innerHTML = 'Valores Formulario'
+title.innerHTML = 'Se Todas as variáveis são ou não nulas/undefined'
 
 function isNullOrUndefinedWithArray(...variables) {
   const listObjects = [...variables];
@@ -48,6 +53,5 @@ buttonReset.onclick = function() {
 };
 
 function retornoResposta(resposta) {
-  if (resposta == true) return "Sim";
-  if (resposta == false) return "Não";
+  return resposta ? 'Sim' : 'Não'  
 }
