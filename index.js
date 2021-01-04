@@ -15,7 +15,7 @@ const inputValue1 = document.getElementById("input-valor-1");
 
 titleInput.innerHTML = 'Valores Formulario';
 title.innerHTML = 'Se Todas as variáveis são ou não nulas/undefined';
-// inputValue1.focus();
+inputValue1.focus();
 
 function isNullOrUndefinedWithArray(...variables) {
   const listObjects = [...variables];
