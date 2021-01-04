@@ -28,17 +28,25 @@ buttonResult.onclick = function() {
   var valor_2_target = document.querySelector("#input-valor-2");
   var valor_3_target = document.querySelector("#input-valor-3");
 
+  const inputArray = [valor_1_target.value, valor_2_target.value, valor_3_target.value]
+  const isInputValue = inputArray.some(s => s != "") // se algum estiver preenchido
+
+  if(isInputValue){
+    var regexValidation = regexInput(valor_1_target.value, valor_2_target.value, valor_3_target.value);
+    if(regexValidation) return alert('Digite somente letras, maiúsculas ou minúsculas');
+  }
+
   if (valor_1_target.value == "") {
     valor_1_target = null;
   }
-
+ 
   if (valor_2_target.value == "") {
     valor_2_target = null;
   }
 
   if (valor_3_target.value == "") {
     valor_3_target = null;
-  }
+  }  
 
   return (resultadoDocument.innerHTML =
     "São todas nulas? " +
@@ -49,11 +57,26 @@ buttonResult.onclick = function() {
 
 var buttonReset = document.getElementById("btn-reset");
 buttonReset.onclick = function() {
-  for (let i = 1; i < 4; i++) {
+  const limitArray = 4;
+    document.getElementById("resultado").innerHTML = "";
+  for (let i = 1; i < limitArray; i++) {
     document.getElementById("input-valor-" + i.toString()).value = "";
   }
 };
 
 function retornoResposta(resposta) {
-  return resposta ? 'Sim' : 'Não'  
+  return resposta ? 'Sim' : 'Não';
+}
+
+function regexInput(...input) {
+  const regex = new RegExp('[A-Za-z]');
+  var regexValid = [];
+  for(let regexInput of input){
+    if(regexInput == ""){
+      regexInput = true;
+    }
+  regexValid.push(regex.test(regexInput));
+  }
+  const resultValid = regexValid.some(e => e == false);
+  return resultValid;
 }
